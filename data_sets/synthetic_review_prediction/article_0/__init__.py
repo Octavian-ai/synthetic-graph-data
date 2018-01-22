@@ -3,7 +3,6 @@ from .generate import run as _run
 
 
 def run(client):
-    print(DATASET_NAME)
     return _run(client, create_data_set_properties())
 
 runner = {

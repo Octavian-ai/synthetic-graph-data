@@ -12,3 +12,7 @@ name = "pypi"
 [packages]
 
 "neo4j-driver" = "*"
+lazy = "*"
+tqdm = "*"
+more-itertools = "*"
+numpy = "*"
