@@ -1,1 +1,1 @@
-from .synthetic_review_prediction import runner
+from .synthetic_review_prediction import *
