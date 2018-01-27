@@ -10,7 +10,7 @@ DATASET_NAME = DatasetName('article_0')
 
 
 def create_data_set_properties() -> DataSetProperties:
-    N_STYLES = 2
+    N_STYLES = 6
     styles = [Style(str(i)) for i in range(N_STYLES)]
 
     for style in styles:
