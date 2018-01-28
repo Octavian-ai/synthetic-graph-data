@@ -15,7 +15,7 @@ There are a range of datasets you can generate:
 - experiment_3
 - experiment_4
 - experiment_5
-- article_0
+- article_0 - companion to the article "*An introduction to machine learning on graph databases*"
 
 
 ## HOWTO generate data
