@@ -6,6 +6,7 @@ from .simple_data_set import SimpleDataSet
 from ..utils import DatasetWriter
 from graph_io import QueryParams, CypherQuery
 from uuid import UUID
+import tqdm
 
 
 def run(client, data_set_properties: DataSetProperties):
@@ -23,10 +24,10 @@ def run(client, data_set_properties: DataSetProperties):
 
         create_indexes()
 
-        for i, product in enumerate(data_set.generate_public_products()):
+        for i, product in enumerate(tqdm(data_set.generate_public_products())):
             writer.create_node_if_not_exists(product, {"style"})
 
-        for i, person in enumerate(data_set.generate_public_people()):
+        for i, person in enumerate(tqdm(data_set.generate_public_people())):
             writer.create_node_if_not_exists(person, {"style_preference"})
 
             for review in data_set.generate_reviews(person):
