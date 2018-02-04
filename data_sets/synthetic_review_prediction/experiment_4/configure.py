@@ -6,7 +6,7 @@ from graph_io.classes.dataset_name import DatasetName
 from ..experiment_1.opinion_function import opinion_function
 from ..experiment_1.style_functions import product_style_function, person_style_function
 
-DATASET_NAME = DatasetName('synthetic_review_prediction experiment_4')
+DATASET_NAME = DatasetName('synthetic_review_prediction_experiment_4')
 
 
 def create_data_set_properties() -> DataSetProperties:

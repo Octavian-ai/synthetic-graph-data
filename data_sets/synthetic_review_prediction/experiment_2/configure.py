@@ -4,7 +4,7 @@ from ..utils import WeightedOption, Distribution
 from ..classes import PersonStylePreferenceEnum, ProductStyleEnum, Style
 from graph_io.classes.dataset_name import DatasetName
 
-DATASET_NAME = DatasetName('synthetic_review_prediction experiment_2')
+DATASET_NAME = DatasetName('synthetic_review_prediction_experiment_2')
 
 
 def create_data_set_properties() -> DataSetProperties:

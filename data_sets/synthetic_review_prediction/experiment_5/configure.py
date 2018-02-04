@@ -6,7 +6,7 @@ from ..experiment_1.opinion_function import opinion_function
 from .style_functions import product_style_function, person_style_function
 from graph_io.classes.dataset_name import DatasetName
 
-DATASET_NAME = DatasetName('synthetic_review_prediction experiment_5')
+DATASET_NAME = DatasetName('synthetic_review_prediction_experiment_5')
 
 
 def create_data_set_properties() -> DataSetProperties:
@@ -19,9 +19,9 @@ def create_data_set_properties() -> DataSetProperties:
 
     data_set_properties = DataSetProperties(
         dataset_name=DATASET_NAME,
-        n_reviews=12000,
+        n_reviews=2000 * 5000,
         n_companies=0,
-        reviews_per_product=75,
+        reviews_per_product=2000,
         reviews_per_person_distribution=[
             WeightedOption[int](10, 1)
         ],
