@@ -6,7 +6,7 @@ from .simple_data_set import SimpleDataSet
 from ..utils import DatasetWriter
 from graph_io import QueryParams, CypherQuery
 from uuid import UUID
-import tqdm
+from tqdm import tqdm
 
 
 def run(client, data_set_properties: DataSetProperties):
