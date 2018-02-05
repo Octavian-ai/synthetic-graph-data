@@ -19,9 +19,9 @@ def create_data_set_properties() -> DataSetProperties:
 
     data_set_properties = DataSetProperties(
         dataset_name=DATASET_NAME,
-        n_reviews=2000 * 5000,
+        n_reviews=200 * 200,
         n_companies=0,
-        reviews_per_product=2000,
+        reviews_per_product=200,
         reviews_per_person_distribution=[
             WeightedOption[int](10, 1)
         ],

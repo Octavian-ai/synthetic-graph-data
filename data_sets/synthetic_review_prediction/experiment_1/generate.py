@@ -14,6 +14,7 @@ def run(client, data_set_properties: DataSetProperties):
     with DatasetWriter(client, data_set_properties.dataset_name) as writer:
 
         writer.nuke_dataset()
+        print("Deleted previous data")
 
         data_set: SimpleDataSet = SimpleDataSet(data_set_properties)
 
@@ -24,8 +25,12 @@ def run(client, data_set_properties: DataSetProperties):
 
         create_indexes()
 
+        print("Created indices")
+
         for i, product in enumerate(tqdm(data_set.generate_public_products())):
             writer.create_node_if_not_exists(product, {"style"})
+
+        print("Created product nodes")
 
         for i, person in enumerate(tqdm(data_set.generate_public_people())):
             writer.create_node_if_not_exists(person, {"style_preference"})
