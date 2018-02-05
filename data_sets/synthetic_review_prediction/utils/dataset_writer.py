@@ -30,7 +30,12 @@ class DatasetWriter(object):
         pass
 
     def nuke_dataset(self):
-        query = CypherQuery("MATCH (n:NODE {dataset_name: $dataset_name}) DETACH DELETE n")
+        query = CypherQuery("""
+            MATCH (n:NODE {dataset_name: $dataset_name})
+            WITH n LIMIT 1000
+            DETACH DELETE n
+            RETURN count(*);
+            """)
         self._client.execute_cypher_write(query, QueryParams(dataset_name=self.dataset_name))
 
     def create_node_if_not_exists(self, node: GraphNode, properties: Set[AnyStr]):  # TODO: define properties on the node entity itself?

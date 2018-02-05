@@ -13,9 +13,6 @@ overrides.update(**{
         'neo4j_user': 'readonly',
         'neo4j_password': '0s3DGA6Zq'
     },
-    'local': { # Just uses defaults
-
-    }
 })
 
 with open('./config/local_overrides.json') as f:
