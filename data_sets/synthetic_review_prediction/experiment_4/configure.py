@@ -19,11 +19,11 @@ def create_data_set_properties() -> DataSetProperties:
 
     data_set_properties = DataSetProperties(
         dataset_name=DATASET_NAME,
-        n_reviews=12000,
+        n_reviews=200 * 200,
         n_companies=0,
-        reviews_per_product=75,
+        reviews_per_product=200,
         reviews_per_person_distribution=[
-            WeightedOption[int](10, 1)
+            WeightedOption[int](200, 1)
         ],
         person_styles_distribution=PersonStyleWeightDistribution([
             PersonStyleWeight(x, 1) for x in PersonStylePreferenceEnum.iterate()
