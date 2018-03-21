@@ -10,8 +10,13 @@ DATASET_NAME = DatasetName('synthetic_review_prediction_experiment_4')
 
 
 def create_data_set_properties() -> DataSetProperties:
-    N_STYLES = 6
-    styles = [Style(str(i)) for i in range(N_STYLES)]
+    
+    n_styles = 6
+    n_products = 50
+    reviews_per_product = 200
+    reviews_per_person = 40
+
+    styles = [Style(str(i)) for i in range(n_styles)]
 
     for style in styles:
         ProductStyleEnum.register('LIKES_'+style.value, style)
@@ -19,11 +24,11 @@ def create_data_set_properties() -> DataSetProperties:
 
     data_set_properties = DataSetProperties(
         dataset_name=DATASET_NAME,
-        n_reviews=200 * 200,
+        n_reviews=n_products * reviews_per_product,
         n_companies=0,
-        reviews_per_product=200,
+        reviews_per_product=reviews_per_product,
         reviews_per_person_distribution=[
-            WeightedOption[int](200, 1)
+            WeightedOption[int](reviews_per_person, 1)
         ],
         person_styles_distribution=PersonStyleWeightDistribution([
             PersonStyleWeight(x, 1) for x in PersonStylePreferenceEnum.iterate()

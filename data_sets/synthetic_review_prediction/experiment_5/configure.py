@@ -6,11 +6,7 @@ from ..experiment_1.opinion_function import opinion_function
 from .style_functions import product_style_function, person_style_function
 from graph_io.classes.dataset_name import DatasetName
 
-DATASET_NAME = DatasetName('synthetic_review_prediction_experiment_5')
-
-
-def create_data_set_properties() -> DataSetProperties:
-    N_STYLES = 6
+def create_data_set_properties(DATASET_NAME:DatasetName, N_STYLES) -> DataSetProperties:
     styles = [Style(str(i)) for i in range(N_STYLES)]
 
     for style in styles:
