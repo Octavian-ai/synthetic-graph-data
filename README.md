@@ -16,6 +16,8 @@ There are a range of datasets you can generate:
 - experiment_4
 - experiment_5
 - article_0 - companion to the article "*An introduction to machine learning on graph databases*"
+- article_1 - companion to the article "*Review prediction using graph data in Neo4j and an embedding in Tensorflow*"
+
 
 
 ## HOWTO generate data

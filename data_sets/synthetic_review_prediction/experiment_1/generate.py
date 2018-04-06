@@ -1,5 +1,6 @@
 from ..classes import PersonWroteReview, ReviewOfProduct, IsGoldenFlag
 from typing import Set, AnyStr
+import random
 
 from ..meta_classes import DataSetProperties
 from .simple_data_set import SimpleDataSet
@@ -36,7 +37,8 @@ def run(client, data_set_properties: DataSetProperties):
             writer.create_node_if_not_exists(person, {"style_preference"})
 
             for review in data_set.generate_reviews(person):
-                writer.create_node_if_not_exists(review, {"score"})
+                review.test = random.random() <= 0.1
+                writer.create_node_if_not_exists(review, {"score", "test"})
                 writer.create_edge_if_not_exists(PersonWroteReview(review.by_person, review.id, IsGoldenFlag(False)), set())
                 writer.create_edge_if_not_exists(ReviewOfProduct(review.id, review.of_product, IsGoldenFlag(False)), set())
 
