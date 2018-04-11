@@ -12,8 +12,8 @@ DATASET_NAME = DatasetName('article_1')
 def create_data_set_properties() -> DataSetProperties:
     
     n_styles = 6
-    n_products = 100
-    reviews_per_product = 1000
+    n_products = 50
+    reviews_per_product = 200
     reviews_per_person = 40
 
     styles = [Style(str(i)) for i in range(n_styles)]

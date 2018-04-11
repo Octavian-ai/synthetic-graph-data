@@ -44,8 +44,10 @@ class SimpleDataSet(object):
             yield person
 
     def generate_reviews(self, person: Person):
-        for i in range(person.meta_properties.number_of_reviews):
-            product = self.pick_public_product()
+
+        products = random.choices(self._public_products, k=person.meta_properties.number_of_reviews)
+
+        for product in products:
             score = self.opinion_function(person, product)
             review = Review(ReviewID.new_random(), IsGoldenFlag(False), score, person.id, product.id)
             self._public_review_ids.add(review.id)
@@ -67,3 +69,5 @@ class SimpleDataSet(object):
 
     def pick_public_company(self) -> CompanyID:
         return random.choice(self._public_company_ids)
+
+
