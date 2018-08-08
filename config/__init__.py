@@ -3,11 +3,6 @@ from .environment import Environment
 
 # There are too many layers and too many files to this config system
 
-default_values = {
-    'neo4j_url': 'bolt://localhost',
-    'neo4j_user': 'neo4j',
-    'neo4j_password': 'local neo hates security!'
-}
 
 environment_box = Environment(None)
 

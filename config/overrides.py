@@ -20,5 +20,8 @@ overrides.update(**{
     },
 })
 
-with open('./config/local_overrides.json') as f:
-    overrides.update(json.load(f))
+try:
+    with open('./config/local_overrides.json') as f:
+        overrides.update(json.load(f))
+except Exception:
+    pass
